@@ -32,6 +32,7 @@
                 <SelectItem value="ja">Japanese</SelectItem>
                 <SelectItem value="es">Spanish</SelectItem>
                 <SelectItem value="mr">Marathi</SelectItem>
+                <SelectItem value="pt">Portuguese</SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>
