@@ -1,6 +1,6 @@
 services:
   app:
-    image: libredesk/libredesk:latest
+    build: .
     restart: unless-stopped
     environment:
       LIBREDESK_SYSTEM_USER_PASSWORD: ${LIBREDESK_SYSTEM_USER_PASSWORD:-}
