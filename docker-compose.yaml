@@ -6,7 +6,7 @@ services:
       LIBREDESK_SYSTEM_USER_PASSWORD: ${LIBREDESK_SYSTEM_USER_PASSWORD:-}
     networks:
       - libredesk
-      - coolify  # rede do Traefik
+      - coolify
     depends_on:
       - db
       - redis
@@ -20,6 +20,7 @@ services:
       - "traefik.http.routers.libredesk.entrypoints=websecure"
       - "traefik.http.routers.libredesk.tls.certresolver=letsencrypt"
       - "traefik.http.services.libredesk.loadbalancer.server.port=9000"
+      - "traefik.docker.network=coolify"
 
   db:
     image: postgres:17-alpine
