@@ -8,7 +8,7 @@ COPY frontend/ ./
 RUN pnpm build
 
 # Stage 2: Build backend
-FROM golang:1.23-alpine AS backend-builder
+FROM golang:1.25-alpine AS backend-builder
 WORKDIR /app
 RUN apk add --no-cache git
 RUN go install github.com/knadh/stuffbin/...
