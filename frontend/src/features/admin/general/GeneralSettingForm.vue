@@ -28,11 +28,10 @@
                 <SelectItem value="en">English</SelectItem>
                 <SelectItem value="fa">Farsi</SelectItem>
                 <SelectItem value="fr">French</SelectItem>
-                <SelectItem value="it">Italian</SelectItem>
+                <SelectItem value="pt">Portugues</SelectItem>
                 <SelectItem value="ja">Japanese</SelectItem>
                 <SelectItem value="es">Spanish</SelectItem>
                 <SelectItem value="mr">Marathi</SelectItem>
-                <SelectItem value="pt">Portuguese</SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>
