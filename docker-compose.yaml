@@ -16,7 +16,7 @@ services:
     command: [sh, -c, "./libredesk --install --idempotent-install --yes --config /libredesk/config.toml && ./libredesk --upgrade --yes --config /libredesk/config.toml && ./libredesk --config /libredesk/config.toml"]
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.libredesk.rule=Host(`SEU_DOMINIO_AQUI`)"
+      - "traefik.http.routers.libredesk.rule=Host(`helpdesk.ecotecbrasil.com.br`)"
       - "traefik.http.routers.libredesk.entrypoints=websecure"
       - "traefik.http.routers.libredesk.tls.certresolver=letsencrypt"
       - "traefik.http.services.libredesk.loadbalancer.server.port=9000"
