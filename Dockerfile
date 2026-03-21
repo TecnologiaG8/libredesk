@@ -12,7 +12,7 @@ RUN pnpm build
 FROM golang:1.25-alpine AS backend-builder
 WORKDIR /app
 RUN apk add --no-cache git
-RUN go install github.com/knadh/stuffbin/cmd/stuffbin@latest
+RUN go install github.com/knadh/stuffbin/...@v1.3.0
 COPY go.mod go.sum ./
 RUN go mod download
 COPY cmd/ ./cmd/
