@@ -12,7 +12,7 @@ RUN pnpm build
 FROM golang:1.25-alpine AS backend-builder
 WORKDIR /app
 RUN apk add --no-cache git
-RUN go install github.com/knadh/stuffbin/...
+RUN go install github.com/knadh/stuffbin/cmd/stuffbin@latest
 COPY go.mod go.sum ./
 RUN go mod download
 COPY cmd/ ./cmd/
@@ -24,7 +24,7 @@ COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
 RUN CGO_ENABLED=0 go build -a \
     -ldflags="-s -w" \
     -o libredesk cmd/*.go
-RUN $(go env GOPATH)/bin/stuffbin -a stuff -in libredesk -out libredesk \
+RUN /go/bin/stuffbin -a stuff -in libredesk -out libredesk \
     frontend/dist i18n schema.sql static
 
 # Stage 3: Final image
